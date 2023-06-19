@@ -1,12 +1,51 @@
-# XIV Cinema
-Dwi Agung Febriyanto (22/493887/SV/20746)
+### Dwi Agung Febriyanto (22/493887/SV/20746)
 
-# Penjelasan Website
+# XIV CINEMA
 Website digunakan untuk menampilkan daftar film yang sedang atau akan ditayangkan di bioskop. Setiap film memiliki detail yang berupa judul, durasi, tanggal rilis, sinopsis, rating, dan di teater mana film itu akan ditayangkan. Jadwal penayangan dan rating akan muncul ketika film tersebut sudah dirilis. Rincian di atas memenuhi kebutuhan klien yang menginginkan website untuk menampilkan daftar film beserta jam tayangnya untuk sebuah bioskop.
 
-# 4 Requirements Dasar
+# 4 REQUIREMENTS DASAR
 ## Desain rapi mengikuti kaidah atau prinsip desain
+#### Prinsip visibility pada navbar
+> ![image](https://github.com/dwiagungfebriyanto/UASPPW1_22-493887-SV-20746_XIV-CINEMA/assets/126530985/2b5139b3-c900-4a71-b8ba-55d859e163e6)
+>
+> **Gambar 1.** Tampilan navbar ketika di scroll
 
+Setiap pengguna melakukan scroll navbar yang semulanya transparan di Section 1 akan memiliki background. Hal tersebut menerapkan prinsip desain visibility yang membuat navbar akan selalu terlihat dan terbaca dengan jelas.
+```css
+.header-top {
+    background-color: #00000000;
+}
+
+.header-scrolled {
+    background-color: #334a52b1;
+    backdrop-filter: blur(50px);
+}
+```
+Potongan kode css di atas berfungsi untuk mengatur warna background navbar.
+```javascript
+var headerClicked = 0;
+
+window.addEventListener('scroll', function() {
+    var navbar = document.getElementById('header');
+    if (window.scrollY > 0) {
+        navbar.classList.add('header-scrolled', 'shadow');
+    } else if (window.scrollY == 0 && !headerClicked % 2 == 1) {
+        navbar.classList.remove('header-scrolled', 'shadow');
+        navbar.classList.add('header-top', 'navbar-dark');
+    }
+});
+
+function headerbg() {
+    var navbar = document.getElementById('header');
+    headerClicked ++;
+    if (headerClicked % 2 == 1) {
+        navbar.classList.add('header-scrolled', 'shadow');
+    } else if (headerClicked % 2 == 0 && !window.scrollY > 0) {
+        navbar.classList.remove('header-scrolled', 'shadow');
+    }
+}
+```
+Potongan kode javascript di atas akan mengatur kapan navbar akan memiliki background. Variabel ```headerClicked``` digunakan ketika navbar berada di posisi ```top: 0``` dan ketika navbar dalam kedaan collapsed. Ketik navbar di klik untuk meng-expand navbar akan menampilkan backgroundnya.
 
 ## Website responsive
 Website dibuat menggunakan kombinasi dari Bootstrap dan media query yang digunakan untuk menyesuaikan beberapa elemen.
