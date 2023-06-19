@@ -24,11 +24,17 @@ Website dibuat menggunakan kombinasi dari Bootstrap dan media query yang digunak
     }
 }
 ```
-Media query di atas akan menyesuaikan padding dari judul film dan deskripsi di Section 1 dan padding deskripsi di Section 3 & 5. Media query akan dijalankan ketika lebar layar <= 768px.
+Media query di atas akan menyesuaikan padding dari judul film dan deskripsi di Section 1 dan padding deskripsi di Section 3 & 5. Media query akan dijalankan ketika lebar layar kurang dari 768px.
 
-![image](https://github.com/dwiagungfebriyanto/UASPPW1_22-493887-SV-20746_XIV-CINEMA/assets/126530985/98e3089e-7f0a-4516-9c48-30975e25726a)
-![image](https://github.com/dwiagungfebriyanto/UASPPW1_22-493887-SV-20746_XIV-CINEMA/assets/126530985/eb3f7030-10a0-4c61-b15b-f1c9b84f5082)
+> ![image](https://github.com/dwiagungfebriyanto/UASPPW1_22-493887-SV-20746_XIV-CINEMA/assets/126530985/98e3089e-7f0a-4516-9c48-30975e25726a)
+>
+> **Gambar 1.**
+> Penyesuaian padding di Section 1
 
+> ![image](https://github.com/dwiagungfebriyanto/UASPPW1_22-493887-SV-20746_XIV-CINEMA/assets/126530985/eb3f7030-10a0-4c61-b15b-f1c9b84f5082)
+>
+> **Gambar 2.**
+> Penyesuaian padding di deskripsi Section 3
 
 ```css
 @media (max-width: 768px) {
@@ -53,7 +59,10 @@ Media query di atas akan menyesuaikan padding dari judul film dan deskripsi di S
 ```
 Media query di atas akan menyesuaikan elemen yang berada di ```detail-film.php```, ketika lebar layar <= 768px maka ukuran font judul film akan berubah dan posisinya menjadi di tengah (semula di pinggir kiri). Produsen dari film juga akan berganti posisi menjadi di tengah. Untuk #coming-poster akan mengubah padding Section 4 di ```index.html```.
 
-![image](https://github.com/dwiagungfebriyanto/UASPPW1_22-493887-SV-20746_XIV-CINEMA/assets/126530985/64f3ae20-c04e-43b3-8009-b647f58ad023)
+> ![image](https://github.com/dwiagungfebriyanto/UASPPW1_22-493887-SV-20746_XIV-CINEMA/assets/126530985/64f3ae20-c04e-43b3-8009-b647f58ad023)
+> 
+> **Gambar 3.**
+> Penyesuaian tata letak judul dan nama produksi di ```detail-film.php```
 
 ```css
 @media (max-width: 992px) {
@@ -62,7 +71,11 @@ Media query di atas akan menyesuaikan elemen yang berada di ```detail-film.php``
     }
 }
 ```
-Berbeda dengan media query yang lain, media query di atas akan mengubah bagian Quick links di ```footer``` menjadi rata kiri (sebelumnya rata kanan) ketika lebar layar <= 992px.
+Berbeda dengan media query yang lain, media query di atas akan mengubah bagian Quick links di ```footer``` menjadi rata kiri (sebelumnya rata kanan) ketika lebar layar kurang dari 992px.
+
+> ![image](https://github.com/dwiagungfebriyanto/UASPPW1_22-493887-SV-20746_XIV-CINEMA/assets/126530985/a4e53277-44bb-46ea-8b8e-0f583571251a)
+>
+> **Gambar .** Penyesuaian posisi text di ```footer```
 
 ## Direct feedback ke pengguna website
 Di Section 6 ```index.php```, pengguna website dapat mengisikan detail kontak dan pesan yang nantinya akan disimpan ke database. Pengguna akan mendapatkan feedback setelah mengirimkan data yang diisi ke form tersebut.
