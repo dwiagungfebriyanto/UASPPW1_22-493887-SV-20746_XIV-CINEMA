@@ -7,6 +7,7 @@ Website digunakan untuk menampilkan daftar film yang sedang atau akan ditayangka
 # 4 Requirements Dasar
 ## Desain rapi mengikuti kaidah atau prinsip desain
 
+
 ## Website responsive
 Website dibuat menggunakan kombinasi dari Bootstrap dan media query yang digunakan untuk menyesuaikan beberapa elemen.
 
@@ -24,6 +25,11 @@ Website dibuat menggunakan kombinasi dari Bootstrap dan media query yang digunak
 }
 ```
 Media query di atas akan menyesuaikan padding dari judul film dan deskripsi di Section 1 dan padding deskripsi di Section 3 & 5. Media query akan dijalankan ketika lebar layar <= 768px.
+
+![image](https://github.com/dwiagungfebriyanto/UASPPW1_22-493887-SV-20746_XIV-CINEMA/assets/126530985/98e3089e-7f0a-4516-9c48-30975e25726a)
+![image](https://github.com/dwiagungfebriyanto/UASPPW1_22-493887-SV-20746_XIV-CINEMA/assets/126530985/eb3f7030-10a0-4c61-b15b-f1c9b84f5082)
+
+
 ```css
 @media (max-width: 768px) {
     .detail {
@@ -46,6 +52,9 @@ Media query di atas akan menyesuaikan padding dari judul film dan deskripsi di S
 }
 ```
 Media query di atas akan menyesuaikan elemen yang berada di ```detail-film.php```, ketika lebar layar <= 768px maka ukuran font judul film akan berubah dan posisinya menjadi di tengah (semula di pinggir kiri). Produsen dari film juga akan berganti posisi menjadi di tengah. Untuk #coming-poster akan mengubah padding Section 4 di ```index.html```.
+
+![image](https://github.com/dwiagungfebriyanto/UASPPW1_22-493887-SV-20746_XIV-CINEMA/assets/126530985/64f3ae20-c04e-43b3-8009-b647f58ad023)
+
 ```css
 @media (max-width: 992px) {
     .text-position {
@@ -130,6 +139,7 @@ Potongan kode di atas diambil dari Section 3, kode di atas akan menampilkan daft
 ?>
 ```
 Konten dinamis yang kedua dari ```index.php``` berada di Section 5, bagian ini akan menampilkan film-film yang belum dirilis, yang berarti memiliki tanggal lebih besar dari tanggal sekarang. Sehingga disertakan ```WHERE tanggal_rilis > NOW()``` di sql-nya. Dalam bagian ini, yang akan ditampilkan adalah poster, judul, dan tanggal rilis dari film tersebut.
+
 #### Konten dinamis di ```detail-film.php```
 ```php
 <?php
@@ -188,3 +198,71 @@ Potongan kode di atas akan menampilkan data dari film yang dipilih. Data yang di
     }
 ?>
 ```
+Potongan kode di atas akan menampilkan jadwal penayangan dari film yang dipilih. Data diambil dari View ```view_jadwal_film``` yang berisi tanggal dan jam (didapat dari waktu mulai di tabel ```waktu_tayang```). Setiap film dapat memiliki lebih dari satu jadwal penayangan, jadi data disajikan dalam bentuk tabel.
+
+#### Konten dinamis di ```search-result.php```
+```php
+include 'koneksi.php';
+$keyword = $_GET['keyword'];
+$judul = mysqli_query($conn, "SELECT * FROM view_detail_film WHERE LOWER(JUDUL_FILM) LIKE LOWER('%$keyword%')");
+$genre = mysqli_query($conn, "SELECT * FROM view_detail_film WHERE LOWER(GENRE) LIKE LOWER('%$keyword%')");
+foreach ($judul as $value) {
+    if ($value['RATING'] != "-") {
+        echo '
+            <div class="col">
+                <div class="card h-100 text-center text-dark card-bg">
+                    <img class="poster" src="data:image/jpeg;base64,' . base64_encode($value['POSTER']) .'" height="fit-content">
+                    <div class="card-body">
+                        <h5 class="card-title"><a id="'.$value["ID_FILM"].'" href="detail-film.php?id_film='.$value["ID_FILM"].'" class="text-decoration-none film-title">'.$value["JUDUL_FILM"].'</a></h5>
+                    </div>
+                    <div class="card-footer">
+                        <p class="card-text">'.$value["RATING"].'</p>
+                    </div>
+                </div>
+            </div>';
+    } else {
+        echo '
+            <div class="col">
+                <div class="card h-100 text-center text-dark card-bg">
+                    <img class="poster" src="data:image/jpeg;base64,' . base64_encode($value['POSTER']) .'" height="fit-content">
+                    <div class="card-body">
+                        <h5 class="card-title"><a id="'.$value["ID_FILM"].'" href="detail-film.php?id_film='.$value["ID_FILM"].'" class="text-decoration-none film-title">'.$value["JUDUL_FILM"].'</a></h5>
+                    </div>
+                    <div class="card-footer">
+                        <p class="card-text">'.$value["TANGGAL_RILIS"].'</p>
+                    </div>
+                </div>
+            </div>';
+    }
+}
+```
+Potongan kode di atas akan menampilkan hasil pencarian dari keyword yang telah dimasukkan di search bar Section 2 ```index.php```. Pencarian dilakukan berdasarkan judul dan genre film. Kemudian film yang sesuai syarat akan dicek apakah film tersebut sudah dirilis atau belum. Pengecekan dilakukan dengan memeriksa rating dari film tersebut. Jika rating berisi '-' berarti film belum dirilis. Perbedaan antara film sudah dirilis atau belum terdapat pada data yang ditampilkan di ```card-footer```. Film yang sudah dirilis akan ditampilkan ratingnya, sebaliknya film yang belum dirilis akan ditampilkan tanggal rilisnya.
+
+#### Konten dinamis di ```insert.php```
+```php
+<?php
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $message = $_POST['message'];
+
+    include 'koneksi.php';
+
+    try {
+        $sql = "INSERT INTO contact (email, name, message) VALUES ('$email', '$name', '$message')";
+        if ($conn->query($sql) === TRUE) {
+            echo '
+                <h1 class="title-detail">Data saved!</h1>
+                <p class="message"">
+                    Hai, '.$name.'! Terima kasih telah menghubungi kami! Kami sangat menghargai antusiasme Anda untuk berhubungan dengan kami. 
+                </p>';
+        }
+    } catch (exception $e) {
+        echo '
+            <h1 class="title-detail">Sorry, there was an error!</h1>
+            <p class="message">
+                Terjadi kesalahan saat memasukkan data. Harap coba kembali dan periksa apakah sudah pernah mengirim pesan yang sama! 
+            </p>';
+    }
+?>
+```
+Apakah insert dinamis?
