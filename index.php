@@ -33,7 +33,7 @@
         </div>
     </nav>
 
-    <!-- Trailer Video -->
+    <!-- Section 1: Trailer Video -->
     <section class="video-container">
         <div class="container text-center position-absolute top-50 start-50 translate-middle">
             <h1 class="title main-title">The Boogeyman</h1>
@@ -47,7 +47,7 @@
         </video>
     </section>
     
-    <!-- Search -->
+    <!-- Section 2: Search -->
     <section id="search" class="container-fluid reveal">
         <div class="container-fluid content">
             <h1 class="title reveal">What are you looking for?</h1>
@@ -63,7 +63,7 @@
         </div>
     </section>
 
-    <!-- Now Palying Film List -->
+    <!-- Section 3: Now Palying Film List -->
     <section class="container-fluid film-list" id="now-playing">
         <div class="text-center">
             <h1 class="title reveal">Now Playing</h1>
@@ -91,7 +91,7 @@
         </div>
     </section>
 
-    <!-- What's coming -->
+    <!-- Section 4: What's coming -->
     <section id="coming-poster" class="container-fluid reveal">
         <div class="container-fluid content">
             <h1 class="title reveal">What's coming?</h1>  
@@ -102,7 +102,7 @@
         </div>
     </section>
 
-    <!-- Upcoming Film List -->
+    <!-- Section 5: Upcoming Film List -->
     <section class="container-fluid film-list" id="upcoming">
         <div class="text-center">
             <h1 class="title reveal">Upcoming</h1>
@@ -130,7 +130,7 @@
         </div>
     </section>
 
-    <!-- Contact -->
+    <!-- Section 6: Contact -->
     <section id="contact" class="contact reveal">
         <h1 class="contact-title text-center reveal">GET IN TOUCH</h1>
         <div class="contact-content reveal">

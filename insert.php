@@ -36,7 +36,6 @@
     <!-- Insert data -->
     <section class="confirm">
         <div id="box" class="container text-center position-absolute top-50 start-50 translate-middle">
-            <!-- <img src="assets/img/logo/logo-light.png" height="80px"> -->
             <?php
                 $name = $_POST['name'];
                 $email = $_POST['email'];
