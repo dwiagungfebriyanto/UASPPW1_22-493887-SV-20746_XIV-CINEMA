@@ -216,6 +216,9 @@ Di Section 6 ```index.php```, pengguna website dapat mengisikan detail kontak da
 ?>
 ```
 Potongan kode di atas diambil dari ```insert.php``` yang akan otomatis terbuka ketika pengguna mengirimkan datanya. Feedback yang didapat bergantung pada apakah data berhasil dimasukkan atau tidak (tidak berhasil dimasukkan karena data yang sama sudah pernah dikirim).
+> ![image](https://github.com/dwiagungfebriyanto/UASPPW1_22-493887-SV-20746_XIV-CINEMA/assets/126530985/f2a823f6-93d7-4e25-9aca-1be5698cc11f)
+>
+> Contoh feedback dari data yang berhasil dimasukkan ke database
 
 
 ## Konten dinamis dari database
@@ -241,6 +244,10 @@ Potongan kode di atas diambil dari ```insert.php``` yang akan otomatis terbuka k
 ?>
 ```
 Potongan kode di atas diambil dari Section 3, kode di atas akan menampilkan daftar film yang sudah dirilis dalam bentuk card. Untuk mengetahui film sudah dirilis atau belum, maka disertakan ```WHERE tanggal_rilis <= NOW()``` di sql. Fungsi ```NOW()``` akan mengembalikan tanggal sekarang, kemudian film-film yang memiliki tanggal rilis sebelum atau sama dengan hari sekarang akan ditampilkan. Dalam bagian ini, yang akan ditampilkan adalah poster, judul film, dan rating dari film tersebut. Ketika judul film di klik maka akan mencul detail dari film tersebut di ```detail-film.php```.
+> ![image](https://github.com/dwiagungfebriyanto/UASPPW1_22-493887-SV-20746_XIV-CINEMA/assets/126530985/88ed0d22-de03-41bb-9d1e-bbd7e2a25cf2)
+>
+> Konten dinamis di Section 3 ```index.php```
+
 ```php
 <?php
     include 'koneksi.php';
@@ -262,6 +269,9 @@ Potongan kode di atas diambil dari Section 3, kode di atas akan menampilkan daft
 ?>
 ```
 Konten dinamis yang kedua dari ```index.php``` berada di Section 5, bagian ini akan menampilkan film-film yang belum dirilis, yang berarti memiliki tanggal lebih besar dari tanggal sekarang. Sehingga disertakan ```WHERE tanggal_rilis > NOW()``` di sql-nya. Dalam bagian ini, yang akan ditampilkan adalah poster, judul, dan tanggal rilis dari film tersebut.
+> ![image](https://github.com/dwiagungfebriyanto/UASPPW1_22-493887-SV-20746_XIV-CINEMA/assets/126530985/2f55f52e-bfc5-43f5-9408-ffb402bfa7d0)
+>
+> Konten dinamis di Section 5
 
 #### Konten dinamis di ```detail-film.php```
 ```php
@@ -322,6 +332,9 @@ Potongan kode di atas akan menampilkan data dari film yang dipilih. Data yang di
 ?>
 ```
 Potongan kode di atas akan menampilkan jadwal penayangan dari film yang dipilih. Data diambil dari View ```view_jadwal_film``` yang berisi tanggal dan jam (didapat dari waktu mulai di tabel ```waktu_tayang```). Setiap film dapat memiliki lebih dari satu jadwal penayangan, jadi data disajikan dalam bentuk tabel.
+> ![image](https://github.com/dwiagungfebriyanto/UASPPW1_22-493887-SV-20746_XIV-CINEMA/assets/126530985/1528b929-e194-4c2c-aac7-87b3ea09d5aa)
+>
+> Konten dinamis di ```detail-film.php```
 
 #### Konten dinamis di ```search-result.php```
 ```php
@@ -360,6 +373,9 @@ foreach ($judul as $value) {
 }
 ```
 Potongan kode di atas akan menampilkan hasil pencarian dari keyword yang telah dimasukkan di search bar Section 2 ```index.php```. Pencarian dilakukan berdasarkan judul dan genre film. Kemudian film yang sesuai syarat akan dicek apakah film tersebut sudah dirilis atau belum. Pengecekan dilakukan dengan memeriksa rating dari film tersebut. Jika rating berisi '-' berarti film belum dirilis. Perbedaan antara film sudah dirilis atau belum terdapat pada data yang ditampilkan di ```card-footer```. Film yang sudah dirilis akan ditampilkan ratingnya, sebaliknya film yang belum dirilis akan ditampilkan tanggal rilisnya.
+> ![image](https://github.com/dwiagungfebriyanto/UASPPW1_22-493887-SV-20746_XIV-CINEMA/assets/126530985/88ecc156-8568-4804-82be-12479b0c8ae6)
+>
+> Konten dinamis di ```search-result.php``` dengan hasil pencarian keyword "horror"
 
 #### Konten dinamis di ```insert.php```
 ```php
@@ -389,3 +405,6 @@ Potongan kode di atas akan menampilkan hasil pencarian dari keyword yang telah d
 ?>
 ```
 Potongan kode di atas akan membarikan feedback kepada pengguna setelah melakukan pengiriman data. Feedback akan bergantung pada keberhasilan data disimpan dalam database atau tidak.
+> ![image](https://github.com/dwiagungfebriyanto/UASPPW1_22-493887-SV-20746_XIV-CINEMA/assets/126530985/91f51a7c-25db-4cbd-8135-61854ccb8193)
+>
+> Konten dinamis di ```insert.php``` dengan contoh data yang tidak berhasil dimasukkan ke database
