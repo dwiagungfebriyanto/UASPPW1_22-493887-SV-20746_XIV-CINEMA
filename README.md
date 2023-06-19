@@ -8,7 +8,7 @@ Website digunakan untuk menampilkan daftar film yang sedang atau akan ditayangka
 #### Prinsip visibility pada navbar
 > ![image](https://github.com/dwiagungfebriyanto/UASPPW1_22-493887-SV-20746_XIV-CINEMA/assets/126530985/2b5139b3-c900-4a71-b8ba-55d859e163e6)
 >
-> **Gambar 1.** Tampilan navbar ketika di scroll
+> Tampilan navbar ketika di scroll
 
 Setiap pengguna melakukan scroll navbar yang semulanya transparan di Section 1 akan memiliki background. Hal tersebut menerapkan prinsip desain visibility yang membuat navbar akan selalu terlihat dan terbaca dengan jelas.
 ```css
@@ -45,7 +45,80 @@ function headerbg() {
     }
 }
 ```
-Potongan kode javascript di atas akan mengatur kapan navbar akan memiliki background. Variabel ```headerClicked``` digunakan ketika navbar berada di posisi ```top: 0``` dan ketika navbar dalam kedaan collapsed. Ketik navbar di klik untuk meng-expand navbar akan menampilkan backgroundnya.
+Potongan kode javascript di atas akan mengatur kapan navbar akan memiliki background. Variabel ```headerClicked``` digunakan ketika navbar berada di posisi ```top: 0``` dan ketika navbar dalam kedaan collapsed. Ketika navbar di klik untuk meng-expand navbar akan menampilkan backgroundnya.
+
+#### Prinsip visibility pada bagian What's coming
+> ![image](https://github.com/dwiagungfebriyanto/UASPPW1_22-493887-SV-20746_XIV-CINEMA/assets/126530985/4f9b11f6-8df7-4b26-a773-fb1563ceecfd)
+>
+> Tampilan Section 4 pada ```index.php```
+
+Di belakang teks terdapat gradasi dari gelap ke terang yang mwmbantu untuk mwningkatkan tingkat keterbacaan teks. Jika gradasi tidak ada maka teks akan sulit dibaca karena background yang cerah. Berikut adalah kode css yang mengantur gradasinya.
+```css
+.content {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 12% 50% 0 50px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.741) 10%, rgba(0, 0, 0, 0.575) 50%, rgba(0, 0, 0, 0));
+}
+```
+Gradasi akan dibuat dari kanan ke kiri dengan warna yang lebih gelap di kanan.
+
+#### Prinsip consistency pada ```search-resul.php```
+> ![image](https://github.com/dwiagungfebriyanto/UASPPW1_22-493887-SV-20746_XIV-CINEMA/assets/126530985/7fc7df28-0c02-469f-9898-27702e46e5a1)
+>
+> Hasil pencarian dengan keyword "ac"
+
+Hasil pencarian menunjukkan bahwa penyajian film-film hasil pencarian yang menggunakan card menerapkan prinsip desain consistency.
+
+
+#### Prinsip consistency pada list now playing dan upcoming
+> ![image](https://github.com/dwiagungfebriyanto/UASPPW1_22-493887-SV-20746_XIV-CINEMA/assets/126530985/d5e6c164-6bcc-416a-a81a-e3eb618ea871)
+>
+> Bagian Now playing
+
+>![image](https://github.com/dwiagungfebriyanto/UASPPW1_22-493887-SV-20746_XIV-CINEMA/assets/126530985/3962c92f-e45f-4a86-a4c9-703a872d9162)
+>
+> Bagian Upcoming
+
+Pada kedua section di atas terlihat bahwa penggunaan card yang konsisten untuk menampilkan film-film. Berikut adalah kode yang dipakai di Section 3 agar tercipta desain yang konsisten.
+```html
+<section class="container-fluid film-list" id="now-playing">
+    <div class="text-center">
+        <h1 class="title reveal">Now Playing</h1>
+        <p class="description reveal">Nikmati pengalaman menonton film terbaru yang tak terlupakan. Dengan koleksi film terkini dari berbagai genre, Anda akan menemukan hiburan yang sesuai dengan selera Anda.</p>
+    </div>
+    <div class="row row-cols-1 row-cols-md-4 g-4 justify-content-space-between">
+        <?php
+            include 'koneksi.php';
+            $film = mysqli_query($conn, "SELECT * FROM film WHERE tanggal_rilis <= NOW()");
+            foreach ($film as $value) {
+                echo '
+                    <div class="col">
+                        <div class="card h-100 text-center text-dark card-bg reveal">
+                            <img class="poster" src="data:image/jpeg;base64,' . base64_encode($value['POSTER']) .'" height="fit-content">
+                            <div class="card-body">
+                                <h5 class="card-title"><a id="'.$value["ID_FILM"].'" href="detail-film.php?id_film='.$value["ID_FILM"].'" class="text-decoration-none film-title">'.$value["JUDUL_FILM"].'</a></h5>
+                            </div>
+                            <div class="card-footer">
+                                <p class="card-text"><b>'.$value["RATING"].'</b></p>
+                            </div>
+                        </div>
+                    </div>';
+            }
+        ?>
+    </div>
+</section>
+```
+#### Prinsip constraints pada Section 6
+> ![image](https://github.com/dwiagungfebriyanto/UASPPW1_22-493887-SV-20746_XIV-CINEMA/assets/126530985/f37e9ade-aa46-4e85-95b1-67592751faad)
+>
+> Form pada Section 6 di ```index.php```
+
+Pada Section 6 diterapkan prinsip desain constraints yang akan memastikan pengguna melakukan apa yang designer inginkan. Sebagai contoh inputan email harus berupa email yang memiliki '@' di dalamnya.
+
 
 ## Website responsive
 Website dibuat menggunakan kombinasi dari Bootstrap dan media query yang digunakan untuk menyesuaikan beberapa elemen.
@@ -67,12 +140,10 @@ Media query di atas akan menyesuaikan padding dari judul film dan deskripsi di S
 
 > ![image](https://github.com/dwiagungfebriyanto/UASPPW1_22-493887-SV-20746_XIV-CINEMA/assets/126530985/98e3089e-7f0a-4516-9c48-30975e25726a)
 >
-> **Gambar 1.**
 > Penyesuaian padding di Section 1
 
 > ![image](https://github.com/dwiagungfebriyanto/UASPPW1_22-493887-SV-20746_XIV-CINEMA/assets/126530985/eb3f7030-10a0-4c61-b15b-f1c9b84f5082)
 >
-> **Gambar 2.**
 > Penyesuaian padding di deskripsi Section 3
 
 ```css
@@ -317,4 +388,4 @@ Potongan kode di atas akan menampilkan hasil pencarian dari keyword yang telah d
     }
 ?>
 ```
-Apakah insert dinamis?
+Potongan kode di atas akan membarikan feedback kepada pengguna setelah melakukan pengiriman data. Feedback akan bergantung pada keberhasilan data disimpan dalam database atau tidak.
