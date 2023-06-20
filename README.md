@@ -21,13 +21,14 @@ Logo merupakan gabungan dari roll film dan logotype XIV CINEMA. Roll film yang i
 > 
 > Primary font
 > 
-> ![image](https://github.com/dwiagungfebriyanto/UASPPW1_22-493887-SV-20746_XIV-CINEMA/assets/126530985/32e4880e-eaee-446e-9ab5-afd750a64fb5)
+> ![image](https://github.com/dwiagungfebriyanto/UASPPW1_22-493887-SV-20746_XIV-CINEMA/assets/126530985/17d49435-9391-4885-8b10-ce21683a2664)
 
 > **Montserrat**
 > 
 > Secondary font
 > 
-> ![image](https://github.com/dwiagungfebriyanto/UASPPW1_22-493887-SV-20746_XIV-CINEMA/assets/126530985/bc52d2f1-2816-464f-addf-ab820bbcaf46)
+> ![image](https://github.com/dwiagungfebriyanto/UASPPW1_22-493887-SV-20746_XIV-CINEMA/assets/126530985/df496049-0567-4e77-99eb-a3e7a89755f7)
+
 
 Semua font di atas diimpor dari Google Fonts
 
