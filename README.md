@@ -1,10 +1,37 @@
 ### Dwi Agung Febriyanto (22/493887/SV/20746)
 
 # XIV CINEMA
-Website digunakan untuk menampilkan daftar film yang sedang atau akan ditayangkan di bioskop. Setiap film memiliki detail yang berupa judul, durasi, tanggal rilis, sinopsis, rating, dan di teater mana film itu akan ditayangkan. Jadwal penayangan dan rating akan muncul ketika film tersebut sudah dirilis. Rincian di atas memenuhi kebutuhan klien yang menginginkan website untuk menampilkan daftar film beserta jam tayangnya untuk sebuah bioskop.
+> ![ProjectPPW1](https://github.com/dwiagungfebriyanto/UASPPW1_22-493887-SV-20746_XIV-CINEMA/assets/126530985/f03cec9f-c63e-45d7-918a-5ca2edf8ca6c)
+>
+> Preview halaman awal
+
+Website digunakan untuk menampilkan daftar film yang sedang atau akan ditayangkan di bioskop. Setiap film memiliki detail yang berupa judul, durasi, genre, tanggal rilis, sinopsis, rating, dan di teater mana film itu akan ditayangkan. Jadwal penayangan dan rating akan muncul ketika film tersebut sudah dirilis. Rincian di atas memenuhi kebutuhan klien yang menginginkan website untuk menampilkan daftar film beserta jam tayangnya untuk sebuah bioskop.
 
 # 4 REQUIREMENTS DASAR
 ## Desain rapi mengikuti kaidah atau prinsip desain
+#### Logo
+> <img width="500" alt="logo-light" src="https://github.com/dwiagungfebriyanto/UASPPW1_22-493887-SV-20746_XIV-CINEMA/assets/126530985/a93dd38f-cdfa-47f8-908c-dd144d0a6c54">
+>
+> Logo XIV Cinema
+
+Logo merupakan gabungan dari roll film dan logotype XIV CINEMA. Roll film yang identik dengan bioskop dan logotype dengan ukuran yang mudah dibaca adalah kombinasi yang cocok untuk sebuah logo.
+
+#### Font
+> **Eczar**
+> 
+> Primary font
+> 
+> ![image](https://github.com/dwiagungfebriyanto/UASPPW1_22-493887-SV-20746_XIV-CINEMA/assets/126530985/17d49435-9391-4885-8b10-ce21683a2664)
+
+> **Montserrat**
+> 
+> Secondary font
+> 
+> ![image](https://github.com/dwiagungfebriyanto/UASPPW1_22-493887-SV-20746_XIV-CINEMA/assets/126530985/df496049-0567-4e77-99eb-a3e7a89755f7)
+
+
+Semua font di atas diimpor dari Google Fonts
+
 #### Prinsip visibility pada navbar
 > ![image](https://github.com/dwiagungfebriyanto/UASPPW1_22-493887-SV-20746_XIV-CINEMA/assets/126530985/2b5139b3-c900-4a71-b8ba-55d859e163e6)
 >
@@ -45,14 +72,14 @@ function headerbg() {
     }
 }
 ```
-Potongan kode javascript di atas akan mengatur kapan navbar akan memiliki background. Variabel ```headerClicked``` digunakan ketika navbar berada di posisi ```top: 0``` dan ketika navbar dalam kedaan collapsed. Ketika navbar di klik untuk meng-expand navbar akan menampilkan backgroundnya.
+Potongan kode javascript di atas akan mengatur kapan navbar akan memiliki background. Variabel ```headerClicked``` digunakan ketika navbar berada di posisi ```top: 0``` dan ketika navbar dalam keadaan collapsed. Ketika navbar di klik untuk meng-expand navbar akan menampilkan backgroundnya.
 
 #### Prinsip visibility pada bagian What's coming
 > ![image](https://github.com/dwiagungfebriyanto/UASPPW1_22-493887-SV-20746_XIV-CINEMA/assets/126530985/4f9b11f6-8df7-4b26-a773-fb1563ceecfd)
 >
 > Tampilan Section 4 pada ```index.php```
 
-Di belakang teks terdapat gradasi dari gelap ke terang yang mwmbantu untuk mwningkatkan tingkat keterbacaan teks. Jika gradasi tidak ada maka teks akan sulit dibaca karena background yang cerah. Berikut adalah kode css yang mengantur gradasinya.
+Di belakang teks terdapat gradasi dari gelap ke terang yang membantu untuk meningkatkan tingkat keterbacaan teks. Jika gradasi tidak ada maka teks akan sulit dibaca karena background yang cerah. Berikut adalah kode css yang mengatur gradasinya.
 ```css
 .content {
     width: 100%;
@@ -66,8 +93,8 @@ Di belakang teks terdapat gradasi dari gelap ke terang yang mwmbantu untuk mwnin
 ```
 Gradasi akan dibuat dari kanan ke kiri dengan warna yang lebih gelap di kanan.
 
-#### Prinsip consistency pada ```search-resul.php```
-> ![image](https://github.com/dwiagungfebriyanto/UASPPW1_22-493887-SV-20746_XIV-CINEMA/assets/126530985/7fc7df28-0c02-469f-9898-27702e46e5a1)
+#### Prinsip consistency pada ```search-result.php```
+> ![image](https://github.com/dwiagungfebriyanto/UASPPW1_22-493887-SV-20746_XIV-CINEMA/assets/126530985/87cdfbb6-8067-482b-89ce-6d4863da8c68)
 >
 > Hasil pencarian dengan keyword "ac"
 
@@ -84,7 +111,7 @@ Hasil pencarian menunjukkan bahwa penyajian film-film hasil pencarian yang mengg
 > Bagian Upcoming
 
 Pada kedua section di atas terlihat bahwa penggunaan card yang konsisten untuk menampilkan film-film. Berikut adalah kode yang dipakai di Section 3 agar tercipta desain yang konsisten.
-```html
+```php
 <section class="container-fluid film-list" id="now-playing">
     <div class="text-center">
         <h1 class="title reveal">Now Playing</h1>
@@ -117,8 +144,15 @@ Pada kedua section di atas terlihat bahwa penggunaan card yang konsisten untuk m
 >
 > Form pada Section 6 di ```index.php```
 
-Pada Section 6 diterapkan prinsip desain constraints yang akan memastikan pengguna melakukan apa yang designer inginkan. Sebagai contoh inputan email harus berupa email yang memiliki '@' di dalamnya.
-
+Pada Section 6 diterapkan prinsip desain constraints yang akan memastikan pengguna melakukan apa yang designer inginkan. Sebagai contoh inputan email harus berupa email yang memiliki '@' di dalamnya. Berikut penerapannya di kode html.
+```html
+<div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Email address</label>
+    <input type="email" name="email" class="form-control"  placeholder="eg.example@ex.com" required>
+    <div id="emailHelp" class="form-text text-white-50">We'll never share your email with anyone else.</div>
+</div>
+```
+```type="email"``` akan memastikan bahwa inputan berupan alamat email.
 
 ## Website responsive
 Website dibuat menggunakan kombinasi dari Bootstrap dan media query yang digunakan untuk menyesuaikan beberapa elemen.
@@ -171,7 +205,6 @@ Media query di atas akan menyesuaikan elemen yang berada di ```detail-film.php``
 
 > ![image](https://github.com/dwiagungfebriyanto/UASPPW1_22-493887-SV-20746_XIV-CINEMA/assets/126530985/64f3ae20-c04e-43b3-8009-b647f58ad023)
 > 
-> **Gambar 3.**
 > Penyesuaian tata letak judul dan nama produksi di ```detail-film.php```
 
 ```css
@@ -185,7 +218,7 @@ Berbeda dengan media query yang lain, media query di atas akan mengubah bagian Q
 
 > ![image](https://github.com/dwiagungfebriyanto/UASPPW1_22-493887-SV-20746_XIV-CINEMA/assets/126530985/a4e53277-44bb-46ea-8b8e-0f583571251a)
 >
-> **Gambar .** Penyesuaian posisi text di ```footer```
+> Penyesuaian posisi text di ```footer```
 
 ## Direct feedback ke pengguna website
 Di Section 6 ```index.php```, pengguna website dapat mengisikan detail kontak dan pesan yang nantinya akan disimpan ke database. Pengguna akan mendapatkan feedback setelah mengirimkan data yang diisi ke form tersebut.
@@ -243,7 +276,7 @@ Potongan kode di atas diambil dari ```insert.php``` yang akan otomatis terbuka k
     }
 ?>
 ```
-Potongan kode di atas diambil dari Section 3, kode di atas akan menampilkan daftar film yang sudah dirilis dalam bentuk card. Untuk mengetahui film sudah dirilis atau belum, maka disertakan ```WHERE tanggal_rilis <= NOW()``` di sql. Fungsi ```NOW()``` akan mengembalikan tanggal sekarang, kemudian film-film yang memiliki tanggal rilis sebelum atau sama dengan hari sekarang akan ditampilkan. Dalam bagian ini, yang akan ditampilkan adalah poster, judul film, dan rating dari film tersebut. Ketika judul film di klik maka akan mencul detail dari film tersebut di ```detail-film.php```.
+Potongan kode di atas diambil dari Section 3, kode di atas akan menampilkan daftar film yang sudah dirilis dalam bentuk card. Untuk mengetahui film sudah dirilis atau belum, maka disertakan ```WHERE tanggal_rilis <= NOW()``` di sql. Fungsi ```NOW()``` akan mengembalikan tanggal sekarang, kemudian film-film yang memiliki tanggal rilis sebelum atau sama dengan hari sekarang akan ditampilkan. Dalam bagian ini, yang akan ditampilkan adalah poster, judul film, dan rating dari film tersebut. Ketika judul film di klik maka akan muncul detail dari film tersebut di ```detail-film.php```.
 > ![image](https://github.com/dwiagungfebriyanto/UASPPW1_22-493887-SV-20746_XIV-CINEMA/assets/126530985/88ed0d22-de03-41bb-9d1e-bbd7e2a25cf2)
 >
 > Konten dinamis di Section 3 ```index.php```
@@ -404,7 +437,7 @@ Potongan kode di atas akan menampilkan hasil pencarian dari keyword yang telah d
     }
 ?>
 ```
-Potongan kode di atas akan membarikan feedback kepada pengguna setelah melakukan pengiriman data. Feedback akan bergantung pada keberhasilan data disimpan dalam database atau tidak.
+Potongan kode di atas akan memberikan feedback kepada pengguna setelah melakukan pengiriman data. Feedback akan bergantung pada keberhasilan data disimpan dalam database atau tidak.
 > ![image](https://github.com/dwiagungfebriyanto/UASPPW1_22-493887-SV-20746_XIV-CINEMA/assets/126530985/91f51a7c-25db-4cbd-8135-61854ccb8193)
 >
 > Konten dinamis di ```insert.php``` dengan contoh data yang tidak berhasil dimasukkan ke database
