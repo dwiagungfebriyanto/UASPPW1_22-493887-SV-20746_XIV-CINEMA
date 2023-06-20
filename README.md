@@ -172,13 +172,10 @@ Website dibuat menggunakan kombinasi dari Bootstrap dan media query yang digunak
 ```
 Media query di atas akan menyesuaikan padding dari judul film dan deskripsi di Section 1 dan padding deskripsi di Section 3 & 5. Media query akan dijalankan ketika lebar layar kurang dari 768px.
 
-> <img height="400px" src="https://github.com/dwiagungfebriyanto/UASPPW1_22-493887-SV-20746_XIV-CINEMA/assets/126530985/98e3089e-7f0a-4516-9c48-30975e25726a">
+> <img width="304px" src="https://github.com/dwiagungfebriyanto/UASPPW1_22-493887-SV-20746_XIV-CINEMA/assets/126530985/98e3089e-7f0a-4516-9c48-30975e25726a">
+> <img width="300px" src="https://github.com/dwiagungfebriyanto/UASPPW1_22-493887-SV-20746_XIV-CINEMA/assets/126530985/eb3f7030-10a0-4c61-b15b-f1c9b84f5082">
 >
-> Penyesuaian padding di Section 1
-
-> <img height="400px" src="https://github.com/dwiagungfebriyanto/UASPPW1_22-493887-SV-20746_XIV-CINEMA/assets/126530985/eb3f7030-10a0-4c61-b15b-f1c9b84f5082">
->
-> Penyesuaian padding di deskripsi Section 3
+> Penyesuaian padding di Section 1 dan deskripsi Section 3
 
 ```css
 @media (max-width: 768px) {
