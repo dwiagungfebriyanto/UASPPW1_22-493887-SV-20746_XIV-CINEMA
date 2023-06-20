@@ -1,10 +1,21 @@
 ### Dwi Agung Febriyanto (22/493887/SV/20746)
 
 # XIV CINEMA
+> ![ProjectPPW1](https://github.com/dwiagungfebriyanto/UASPPW1_22-493887-SV-20746_XIV-CINEMA/assets/126530985/f03cec9f-c63e-45d7-918a-5ca2edf8ca6c)
+>
+> Preview halaman awal
+
 Website digunakan untuk menampilkan daftar film yang sedang atau akan ditayangkan di bioskop. Setiap film memiliki detail yang berupa judul, durasi, genre, tanggal rilis, sinopsis, rating, dan di teater mana film itu akan ditayangkan. Jadwal penayangan dan rating akan muncul ketika film tersebut sudah dirilis. Rincian di atas memenuhi kebutuhan klien yang menginginkan website untuk menampilkan daftar film beserta jam tayangnya untuk sebuah bioskop.
 
 # 4 REQUIREMENTS DASAR
 ## Desain rapi mengikuti kaidah atau prinsip desain
+#### Logo
+> <img width="500" alt="logo-light" src="https://github.com/dwiagungfebriyanto/UASPPW1_22-493887-SV-20746_XIV-CINEMA/assets/126530985/a93dd38f-cdfa-47f8-908c-dd144d0a6c54">
+>
+> Logo XIV Cinema
+
+Logo merupakan gabungan dari roll film dan logotype XIV CINEMA. Roll film yang identik dengan bioskop dan logotype dengan ukuran yang mudah dibaca adalah kombinasi yang cocok untuk sebuah logo.
+
 #### Prinsip visibility pada navbar
 > ![image](https://github.com/dwiagungfebriyanto/UASPPW1_22-493887-SV-20746_XIV-CINEMA/assets/126530985/2b5139b3-c900-4a71-b8ba-55d859e163e6)
 >
