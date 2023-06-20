@@ -16,6 +16,21 @@ Website digunakan untuk menampilkan daftar film yang sedang atau akan ditayangka
 
 Logo merupakan gabungan dari roll film dan logotype XIV CINEMA. Roll film yang identik dengan bioskop dan logotype dengan ukuran yang mudah dibaca adalah kombinasi yang cocok untuk sebuah logo.
 
+#### Font
+> **Eczar**
+> 
+> Primary font
+> 
+> ![image](https://github.com/dwiagungfebriyanto/UASPPW1_22-493887-SV-20746_XIV-CINEMA/assets/126530985/32e4880e-eaee-446e-9ab5-afd750a64fb5)
+
+> **Montserrat**
+> 
+> Secondary font
+> 
+> ![image](https://github.com/dwiagungfebriyanto/UASPPW1_22-493887-SV-20746_XIV-CINEMA/assets/126530985/bc52d2f1-2816-464f-addf-ab820bbcaf46)
+
+Semua font di atas diimpor dari Google Fonts
+
 #### Prinsip visibility pada navbar
 > ![image](https://github.com/dwiagungfebriyanto/UASPPW1_22-493887-SV-20746_XIV-CINEMA/assets/126530985/2b5139b3-c900-4a71-b8ba-55d859e163e6)
 >
