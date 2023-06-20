@@ -66,8 +66,9 @@ Di belakang teks terdapat gradasi dari gelap ke terang yang membantu untuk menin
 ```
 Gradasi akan dibuat dari kanan ke kiri dengan warna yang lebih gelap di kanan.
 
-#### Prinsip consistency pada ```search-resul.php```
-> ![image](https://github.com/dwiagungfebriyanto/UASPPW1_22-493887-SV-20746_XIV-CINEMA/assets/126530985/9d570a6a-5f65-40f7-b196-23cf385583c9)
+#### Prinsip consistency pada ```search-result.php```
+> ![image](https://github.com/dwiagungfebriyanto/UASPPW1_22-493887-SV-20746_XIV-CINEMA/assets/126530985/87cdfbb6-8067-482b-89ce-6d4863da8c68)
+
 >
 > Hasil pencarian dengan keyword "ac"
 
