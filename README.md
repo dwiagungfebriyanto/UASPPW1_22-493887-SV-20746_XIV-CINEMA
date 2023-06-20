@@ -95,7 +95,6 @@ Gradasi akan dibuat dari kanan ke kiri dengan warna yang lebih gelap di kanan.
 
 #### Prinsip consistency pada ```search-result.php```
 > ![image](https://github.com/dwiagungfebriyanto/UASPPW1_22-493887-SV-20746_XIV-CINEMA/assets/126530985/87cdfbb6-8067-482b-89ce-6d4863da8c68)
-
 >
 > Hasil pencarian dengan keyword "ac"
 
